@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+        body {
+            background-color: #f0e68c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .card {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+      .card h1 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #ff69b4;
+  animation: pop 0.5s ease-in-out infinite alternate;
+  font-family: Georgia, serif;
+  }
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+        .letter {
+            font-size: 100px;
+            color: #ff69b4;
+            animation: bounce 1s ease-in-out infinite;
+            cursor: pointer;
+        }
+        .letter:hover {
+            transform: scale(1.2);
+        }
+        .instruction {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+        .cat-image {
+            margin-top: 20px;
+            width: 150px; /* Adjust the size as needed */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>THANK YOU !!I WUV YOUU!!</h1>
+        <div class="letter" onclick="window.location.href='letter.html'">💌</div>
+        <div class="instruction">Click on the letter to open it!!</div>
+        <img class="cat-image" src="C:\Users\Kishan\Desktop\messagew\images\c3caf3b0b32885fab4d5de1b62bf62c9.gif"alt="yes cat">
+    </div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envelope Letter</title>
+</head>
+<body>
+<div class="content-wrapper">
+    <div class="envelope-wrapper">
+        <div id="envelope" class="close">
+            <div class="front flap"></div>
+            <div class="front pocket"></div>
+            <div class="letter">
+                <div class="message hidden">
+                  <p>Why are you so cute? 😍
+                    Do you know how cute you look when you smile? 😘 
+                    Keep smiling and remember me when you do 😊. Don't smile for other girls though! 😏😉😘</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="image-container">
+        <img class="cat-image" src="C:\Users\Kishan\Desktop\messagew\images\milk-and-mocha-bears.gif"alt="Cute Bears GIF">
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    var envelope = $('#envelope');
+    var message = $('.message');
+    
+    envelope.click(function() {
+        open();
+    });
+    
+    function open() {
+        envelope.addClass('open').removeClass('close');
+        message.removeClass('hidden').addClass('visible');
+    }
+    
+    function close() {
+        envelope.addClass('close').removeClass('open');
+        message.removeClass('visible').addClass('hidden');
+    }
+})
+</script>
+<style>
+body {
+    background-color: #a8e2ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#envelope {
+    position: relative;
+    width: 280px;
+    height: 180px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: #00334c;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.front {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 3;
+}
+
+.flap {
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-bottom: 82px solid transparent;
+    border-top: 98px solid #00334c;
+    transform-origin: top;
+}
+
+.pocket {
+    border-left: 140px solid #0077b2;
+    border-right: 140px solid #0077b2;
+    border-bottom: 90px solid #006da3;
+    border-top: 90px solid transparent;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.letter {
+    position: relative;
+    background-color: #fff;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 85%; /* Adjusted height */
+    top: -20%; /* Adjusted position to move letter up */
+    border-radius: 6px;
+    box-shadow: 0 2px 26px rgba(0, 0, 0, .12);
+}
+
+.message {
+    position: absolute;
+    top: 15%; /* Adjusted position to move text up */
+    left: 10%;
+    width: 80%;
+    height: 70%; /* Adjusted height */
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    box-shadow: 0 2px 26px rgba(0, 0, 0, .12);
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.4s ease-in-out;
+}
+
+.message.visible {
+    opacity: 1; /* Become visible when class 'visible' is added */
+}
+
+.hidden {
+    display: none;
+}
+
+.open .flap {
+    transform: rotatex(180deg);
+    transition: transform 0.4s ease, z-index 0.6s;
+    z-index: 1;
+}
+
+.close .flap {
+    transform: rotatex(0deg);
+    transition: transform 0.4s 0.6s ease, z-index 1s;
+    z-index: 5;
+}
+
+.close .letter {
+    transform: translatey(0px);
+    transition: transform 0.4s ease, z-index 1s;
+    z-index: 1;
+}
+
+.open .letter {
+    transform: translatey(-60px);
+    transition: transform 0.4s 0.6s ease, z-index 0.6s;
+    z-index: 2;
+}
+
+.image-container {
+    text-align: center;
+}
+
+.cat-image {
+    width: 150px; /* Adjust the size as needed */
+    height: auto;
+}
+</style>
+</body>
+</html>
